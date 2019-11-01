@@ -1,0 +1,10 @@
+echo "# buyersHub_backend" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/yamilzavala/buyersHub_backend.git
+git push -u origin master
+
+git tag
+git tag -a v0.0.1 -m "Release inicial"
+git push --tags

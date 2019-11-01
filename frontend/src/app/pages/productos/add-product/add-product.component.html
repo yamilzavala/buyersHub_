@@ -1,0 +1,27 @@
+<div class="container-fluid page__container">
+    <h1>Administracion de productos</h1>
+
+    <form #formProduct="ngForm" (ngSubmit)="onSubmit()" class="form-inline">
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Nombre</label>
+            <div class="col-8">
+                <input class="form-control" [ngClass]="{'is-invalid': (nombre.errors?.required || nombre.errors?.minlength) && nombre.touched  }" type="text" placeholder="Nombre" name="nombre" required minlength="5" [(ngModel)]="product.nombre" #nombre="ngModel">
+
+                <!--Validaciones-->
+                <div class="invalid-feedback" *ngIf="nombre.errors?.required">
+                    Campo requerido...
+                </div>
+
+                <div class="invalid-feedback" *ngIf="nombre.errors?.minlength">
+                    Se requieren como minimo 5 caracteres
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </form>
+
+</div>
