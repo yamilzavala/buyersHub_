@@ -61,100 +61,102 @@
                     <i class="material-icons">Caracteristicas de auris...</i>
                 </div>
             </div>
-            <a href="student-take-course.html">
-                <img src="assets/images/products/{{productoItem.imagen}}.jpg" alt="Card image cap" style="width:100%;">
+            <a [routerLink]="['/detalleProducto',productoItem.id]">
+                <!-- <a [routerLink]="['/detalleProducto']"> -->
+                <img src="assets/images/products/{{productoItem.imagen}}.jpg " alt="Card image cap " style="width:100%; ">
             </a>
-            <div class="card-body">
-                <small class="text-muted">AURICULARES</small><br> Let’s start with a quick tour of Vue’s data binding features. If you are more interested in ...<br>
+            <div class="card-body ">
+                <small class="text-muted ">AURICULARES</small><br> {{productoItem.descripcion}}<br>
                 <!-- <span class="badge badge-primary ">TECNOLOGIA</span> -->
+
             </div>
-            <button type="button" class="btn btn-outline-primary m-1" (click)="suscribir()" routerLink="/suscripcion" [disabled]="productoItem.estaSuscripto">Suscribirme</button>
-            <button type="button" class="btn btn-outline-primary" [disabled]="!productoItem.estaSuscripto">Desuscribirme</button>
-            <!-- <button type="button" (click)="eliminarProductos(productoItem.id)" class="btn btn-outline-primary">Eliminar</button> -->
-            <!-- <button type="button" (click)="agregarProducto_(productoItem)" class="btn btn-outline-primary">Agregar</button> -->
-            <!-- <button type="button" (click)="modificarProductos(productoItem.id)" class="btn btn-outline-primary">Modificar</button> -->
+            <button type="button " class="btn btn-outline-primary m-1 " (click)="suscribir() " routerLink="/suscripcion " [disabled]="productoItem.estaSuscripto ">Suscribirme</button>
+            <button type="button " class="btn btn-outline-primary " [disabled]="!productoItem.estaSuscripto ">Desuscribirme</button>
+            <!-- <button type="button " (click)="eliminarProductos(productoItem.id) " class="btn btn-outline-primary ">Eliminar</button> -->
+            <!-- <button type="button " (click)="agregarProducto_(productoItem) " class="btn btn-outline-primary ">Agregar</button> -->
+            <!-- <button type="button " (click)="modificarProductos(productoItem.id) " class="btn btn-outline-primary ">Modificar</button> -->
         </div>
 
-        <!-- <div class="card">
-            <div class="card-header text-center">
-                <h4 class="card-title mb-0"><a href="student-take-course.html">Auris 2</a></h4>
-                <div class="rating">
-                    <i class="material-icons">Caracteristicas de auris...</i>
+        <!-- <div class="card ">
+            <div class="card-header text-center ">
+                <h4 class="card-title mb-0 "><a href="student-take-course.html ">Auris 2</a></h4>
+                <div class="rating ">
+                    <i class="material-icons ">Caracteristicas de auris...</i>
                 </div>
             </div>
-            <a href="student-take-course.html">
-                <img src="assets/images/products/2.jpg" alt="Card image cap" style="width:100%;">
+            <a href="student-take-course.html ">
+                <img src="assets/images/products/2.jpg " alt="Card image cap " style="width:100%; ">
             </a>
-            <div class="card-body">
-                <small class="text-muted">AURICULARES</small><br> Developing static website with fast and advanced gulp setup by managing all parts...<br>
+            <div class="card-body ">
+                <small class="text-muted ">AURICULARES</small><br> Developing static website with fast and advanced gulp setup by managing all parts...<br>
             </div>
-            <button type="button" class="btn btn-outline-primary m-1">Suscribirme</button>
-            <button type="button" class="btn btn-outline-primary">Desuscribirme</button>
+            <button type="button " class="btn btn-outline-primary m-1 ">Suscribirme</button>
+            <button type="button " class="btn btn-outline-primary ">Desuscribirme</button>
         </div>
 
-        <div class="card">
-            <div class="card-header text-center">
-                <h4 class="card-title mb-0"><a href="student-take-course.html">Github Webhooks for Beginners</a></h4>
-                <div class="rating">
-                    <i class="material-icons">star</i>
-                    <i class="material-icons">star</i>
-                    <i class="material-icons">star_border</i>
-                    <i class="material-icons">star_border</i>
-                    <i class="material-icons">star_border</i>
+        <div class="card ">
+            <div class="card-header text-center ">
+                <h4 class="card-title mb-0 "><a href="student-take-course.html ">Github Webhooks for Beginners</a></h4>
+                <div class="rating ">
+                    <i class="material-icons ">star</i>
+                    <i class="material-icons ">star</i>
+                    <i class="material-icons ">star_border</i>
+                    <i class="material-icons ">star_border</i>
+                    <i class="material-icons ">star_border</i>
                 </div>
             </div>
-            <a href="student-take-course.html">
-                <img src="assets/images/products/3.jpg" alt="" style="width:100%;">
+            <a href="student-take-course.html ">
+                <img src="assets/images/products/3.jpg " alt=" " style="width:100%; ">
             </a>
-            <div class="card-body">
-                <small class="text-muted">INTERMEDIATE</small><br> Learn the basics of Github and become a power Github developer.<br>
+            <div class="card-body ">
+                <small class="text-muted ">INTERMEDIATE</small><br> Learn the basics of Github and become a power Github developer.<br>
             </div>
-            <button type="button" class="btn btn-outline-primary m-1">Suscribirme</button>
-            <button type="button" class="btn btn-outline-primary">Desuscribirme</button>
+            <button type="button " class="btn btn-outline-primary m-1 ">Suscribirme</button>
+            <button type="button " class="btn btn-outline-primary ">Desuscribirme</button>
         </div>
 
-        <div class="card">
-            <div class="card-header text-center">
-                <h4 class="card-title mb-0"><a href="student-take-course.html">Gulp &amp; Slush Workflows</a></h4>
-                <div class="rating">
-                    <i class="material-icons">star</i>
-                    <i class="material-icons">star</i>
-                    <i class="material-icons">star</i>
-                    <i class="material-icons">star</i>
-                    <i class="material-icons">star_border</i>
+        <div class="card ">
+            <div class="card-header text-center ">
+                <h4 class="card-title mb-0 "><a href="student-take-course.html ">Gulp &amp; Slush Workflows</a></h4>
+                <div class="rating ">
+                    <i class="material-icons ">star</i>
+                    <i class="material-icons ">star</i>
+                    <i class="material-icons ">star</i>
+                    <i class="material-icons ">star</i>
+                    <i class="material-icons ">star_border</i>
                 </div>
             </div>
-            <a href="student-take-course.html">
-                <img src="assets/images/products/4.jpg" alt="Card image cap" style="width:100%;">
+            <a href="student-take-course.html ">
+                <img src="assets/images/products/4.jpg " alt="Card image cap " style="width:100%; ">
             </a>
-            <div class="card-body">
-                <small class="text-muted">ADVANCED</small><br> Let’s start with a quick tour of Vue’s data binding features. If you are more interested in ...<br>
+            <div class="card-body ">
+                <small class="text-muted ">ADVANCED</small><br> Let’s start with a quick tour of Vue’s data binding features. If you are more interested in ...<br>
             </div>
-            <button type="button" class="btn btn-outline-primary m-1">Suscribirme</button>
-            <button type="button" class="btn btn-outline-primary">Desuscribirme</button>
+            <button type="button " class="btn btn-outline-primary m-1 ">Suscribirme</button>
+            <button type="button " class="btn btn-outline-primary ">Desuscribirme</button>
         </div> -->
     </div>
 
     <!-- Pagination -->
-    <ul class="pagination justify-content-center pagination-sm margen-superior">
-        <li class="page-item disabled">
-            <a class="page-link" [routerLink]="['/producto',prev_page]" aria-label="Previous">
-                <span aria-hidden="true" class="material-icons">Anterior</span>
+    <ul class="pagination justify-content-center pagination-sm margen-superior ">
+        <li class="page-item disabled ">
+            <a class="page-link " [routerLink]="[ '/producto',prev_page] " aria-label="Previous ">
+                <span aria-hidden="true " class="material-icons ">Anterior</span>
             </a>
         </li>
-        <li class="page-item active">
-            <a class="page-link" href="#" aria-label="1">
+        <li class="page-item active ">
+            <a class="page-link " href="# " aria-label="1 ">
                 <span>1</span>
             </a>
         </li>
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="1">
+        <li class="page-item ">
+            <a class="page-link " href="# " aria-label="1 ">
                 <span>2</span>
             </a>
         </li>
-        <li class="page-item">
-            <a class="page-link" [routerLink]="['/producto',next_page]" aria-label="Next">
-                <span aria-hidden="true" class="material-icons">Siguiente</span>
+        <li class="page-item ">
+            <a class="page-link " [routerLink]="[ '/producto',next_page] " aria-label="Next ">
+                <span aria-hidden="true " class="material-icons ">Siguiente</span>
             </a>
         </li>
     </ul>

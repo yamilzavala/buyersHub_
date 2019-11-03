@@ -67,8 +67,8 @@ export class ProductosComponent implements OnInit {
           });
   }
 
-  modificarProductos(id){
-    this._productService.editarProducto(id)
+  modificarProductos(id,body){
+    this._productService.editarProducto(id, body)
         .subscribe( res => {
           console.log('Producto editado correctamente: ', res);
         });

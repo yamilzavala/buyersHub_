@@ -60,9 +60,9 @@ function getProductos(req, res) {
 
 
 function getProductoById(req, res) {
-    var productId = req.params.id;
+    var productId = Number(req.params.id);
 
-    Producto.findById(productId, (err, product) => {
+    Producto.find({ "id": productId }, (err, product) => {
         if (err) {
             res.status(500).send({ message: 'Error al buscar producto', err });
         } else {

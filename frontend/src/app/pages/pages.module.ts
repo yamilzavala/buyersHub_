@@ -30,7 +30,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import {CommonModule} from '@angular/common';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { MisSuscripcionesComponent } from './mis-suscripciones/mis-suscripciones.component';
-import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
+import { DetalleProductoComponent } from './productos/detalle-producto/detalle-producto.component';
 import { ModalComponent } from './modal/modal.component';
 import { AddProductComponent } from './productos/add-product/add-product.component';
 

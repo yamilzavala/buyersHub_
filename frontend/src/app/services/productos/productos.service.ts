@@ -27,7 +27,7 @@ export class ProductosService {
     .pipe(
         map( (objetoProductoContenedor: any) => {
          // let a = objetoProductoContenedor;
-              console.log(objetoProductoContenedor.productos);
+              console.log(objetoProductoContenedor);
               return objetoProductoContenedor.productos
               .map(arrayDeProductos =>  {
                     // this.productos.push(objetoProductoContenedor.productos);
@@ -37,60 +37,61 @@ export class ProductosService {
       );
   }
 
-  borrarProducto(id: string) {    
+  borrarProducto(id: string) {
     return this._http.delete( this.url + '/api/products/deleteProduct/'+ id )
     .pipe(
           map(res_productoEliminado =>  {
-                console.log('Producto elimindado: ',res_productoEliminado);
+                console.log('Producto elimindado: ', res_productoEliminado);
                 if (res_productoEliminado) {
                   this.getProductos();
                 }
           })
-        );      
+        );
   }
 
-  editarProducto(id: string) {    
-    return this._http.delete( this.url + '/api/products/updateProduct/'+ id )
+  editarProducto(id: string, body) {
+    return this._http.put( this.url + '/api/products/updateProduct/' + id, body )
     .pipe(
           map(res_productoModificado =>  {
-                console.log('Producto modificado: ',res_productoModificado);
+                console.log('Producto modificado: ', res_productoModificado);
                 if (res_productoModificado) {
                   this.getProductos();
                 }
           })
-        );      
+        );
   }
 
 
-  agregarProducto(producto: ProductoModel) {    
+  agregarProducto(producto: ProductoModel) {
     return this._http.post( this.url + '/api/products/saveProduct/', producto )
     .pipe(
           map(res_productoAgregado =>  {
-                console.log('Producto agregado: ',res_productoAgregado);
+                console.log('Producto agregado: ', res_productoAgregado);
                 if (res_productoAgregado) {
                   this.getProductos();
                 }
           })
-        );      
+        );
   }
 
-  buscarProducto(id: string) {    
-    return this._http.delete( this.url + '/api/products/getProductById/'+ id )
+  buscarProducto(id: number) {
+    return this._http.get( this.url + '/api/products/getProductById/' + id )
     .pipe(
           map(res_producto =>  {
-                console.log('Producto modificado: ',res_producto);
+                console.log('Producto obtenido por id: ', res_producto);
                 if (res_producto) {
                   this.getProductos();
+                  return res_producto;
                 }
           })
-        );      
+        );
   }
 
   // addProduct(product: ProductoModel){
   //    let params = JSON.stringify(product);
   //    let headers = new Headers({
   //      'Content-Type': 'application/json'
-  //      //,'Autorization': token      
+  //      //,'Autorization': token
   //    });
   //    return this._http.post(this.url+'/api/products/saveProduct',params)
   //          .pipe(

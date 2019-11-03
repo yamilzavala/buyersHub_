@@ -1,0 +1,32 @@
+<div class="container-fluid page__container">
+
+    <div class="card-columns">
+
+        <!--CARDS-->
+        <div class="card-columns">
+
+            <div class="card" *ngIf="producto">
+                <div class="card-header text-center">
+                    <h4 class="card-title mb-0">
+                        <!--{{productos[0].nombre}}-->
+                        {{producto.nombre}}
+                    </h4>
+                </div>
+
+                <img src="{{imagen}}" style="width:100%; ">
+
+                <div class="card-body ">
+                    <small class="text-muted "> <br> {{producto.descripcion}}<br></small>
+                    <!-- <span class="badge badge-primary ">TECNOLOGIA</span> -->
+                </div>
+                <div>
+                    <button type="button " class="btn btn-outline-primary m-1 ">Suscribirme</button>
+                    <button type="button " class="btn btn-outline-primary ">Desuscribirme</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>

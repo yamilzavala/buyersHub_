@@ -12,7 +12,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { MisSuscripcionesComponent } from './mis-suscripciones/mis-suscripciones.component';
-import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
+import { DetalleProductoComponent } from './productos/detalle-producto/detalle-producto.component';
 import { AddProductComponent } from './productos/add-product/add-product.component';
 
 
@@ -31,7 +31,8 @@ const pagesRoutes: Routes = [
             { path: 'suscripciones', component: MisSuscripcionesComponent, data: { titulo: 'Mis Suscripciones' } },            
             { path: 'producto', component: ProductosComponent, data: { titulo: 'Producto' } },
             { path: 'agregar-producto', component: AddProductComponent, data: { titulo: 'Agregar Producto' } },
-            { path: 'detalleProducto', component: DetalleProductoComponent, data: { titulo: 'Detalle Producto' } },
+            { path: 'detalleProducto/:id', component: DetalleProductoComponent, data: { titulo: 'Detalle Producto' } },
+            // { path: 'detalleProducto', component: DetalleProductoComponent, data: { titulo: 'Detalle Producto' } },
             { path: 'perfil', component: PerfilComponent, data: { titulo: 'Perfil' } },
             { path: 'busqueda/:termino', component: BusquedaComponent, data: { titulo: 'Busqueda' } },
             { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' } },            
