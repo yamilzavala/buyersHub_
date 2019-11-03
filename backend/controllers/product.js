@@ -12,20 +12,29 @@ function test(req, res) {
 
 
 function getProductos(req, res) {
+    var desde = req.query.desde || 1;
+    desde = Number(desde);
+
     Producto.find({}, (err, productos) => {
-        if (err) {
-            return res.status(500).send({
-                ok: false,
-                message: "Error cargando productos",
-                errors: err
+            if (err) {
+                return res.status(500).send({
+                    ok: false,
+                    message: "Error cargando productos",
+                    errors: err
+                });
+            }
+
+            Producto.count({}, (err, conteo) => {
+                res.status(200).send({
+                    ok: true,
+                    productos,
+                    total: conteo
+                });
             });
-        } else {
-            res.status(200).send({
-                ok: true,
-                productos
-            });
-        }
-    });
+
+        })
+        .skip(desde)
+        .limit(3);
 }
 
 

@@ -1,6 +1,12 @@
 <div class="container-fluid page__container">
     <h1>Administracion de productos</h1>
 
+    <div *ngIf="alertMessage">
+        <div class="alert alert-info">
+            {{alertMessage}}
+        </div>
+    </div>
+
     <form #formProduct="ngForm" (ngSubmit)="onSubmit()" class="form-inline">
 
         <div class="form-group row">
@@ -20,7 +26,7 @@
             </div>
         </div>
 
-
+        <input type="submit" [disabled]="!formProduct.form.valid" value="Guardar">
 
     </form>
 

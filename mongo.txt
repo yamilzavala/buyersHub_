@@ -1,0 +1,61 @@
+####Informacion
+
+
+==========Postman==============
+
+GET
+
+##url:
+http://localhost:3000/api/products/getProductos
+
+========================
+
+POST
+
+##url:
+http://localhost:3000/api/products/saveProduct
+
+##body
+id: 1
+nombre: Producto1
+categoria: tecnologia
+descripcion: Descripcion producto
+imagen: 1
+estaSuscripto: false
+
+========================
+
+GEY BY ID
+
+##url:
+http://localhost:3000/api/products/getProductById/5dbe13afdae6131da0c6b258
+
+========================
+
+PUT
+
+##url:
+http://localhost:3000/api/products/updateProduct/5dbe13afdae6131da0c6b258
+
+##body
+id: 1
+nombre: Producto1
+categoria: tecnologia
+descripcion: Descripcion producto
+imagen: 1
+estaSuscripto: false
+
+========================
+DELETE
+
+##url:
+http://localhost:3000/api/products/deleteProduct/5dbe13afdae6131da0c6b258
+
+
+
+
+
+
+
+
+

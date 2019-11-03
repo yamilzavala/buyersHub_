@@ -70,6 +70,9 @@
             </div>
             <button type="button" class="btn btn-outline-primary m-1" (click)="suscribir()" routerLink="/suscripcion" [disabled]="productoItem.estaSuscripto">Suscribirme</button>
             <button type="button" class="btn btn-outline-primary" [disabled]="!productoItem.estaSuscripto">Desuscribirme</button>
+            <!-- <button type="button" (click)="eliminarProductos(productoItem.id)" class="btn btn-outline-primary">Eliminar</button> -->
+            <!-- <button type="button" (click)="agregarProducto_(productoItem)" class="btn btn-outline-primary">Agregar</button> -->
+            <!-- <button type="button" (click)="modificarProductos(productoItem.id)" class="btn btn-outline-primary">Modificar</button> -->
         </div>
 
         <!-- <div class="card">
@@ -135,7 +138,7 @@
     <!-- Pagination -->
     <ul class="pagination justify-content-center pagination-sm margen-superior">
         <li class="page-item disabled">
-            <a class="page-link" href="#" aria-label="Previous">
+            <a class="page-link" [routerLink]="['/producto',prev_page]" aria-label="Previous">
                 <span aria-hidden="true" class="material-icons">Anterior</span>
             </a>
         </li>
@@ -150,7 +153,7 @@
             </a>
         </li>
         <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
+            <a class="page-link" [routerLink]="['/producto',next_page]" aria-label="Next">
                 <span aria-hidden="true" class="material-icons">Siguiente</span>
             </a>
         </li>
