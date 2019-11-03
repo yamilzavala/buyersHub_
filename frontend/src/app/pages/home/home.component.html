@@ -32,59 +32,22 @@
     <div class="clearfix"></div>
 
     <!--CARDS-->
-    <div class="card-columns">
+    <div class="card-columns" [class.hidden]="!productos">
         <!--CARD 01-->
-        <div class="card">
+        <div class="card" *ngFor="let productoItem of productos">
             <div class="card-header text-center">
-                <h4 class="card-title mb-0"><a href="student-take-course.html">Tecnoligia</a></h4>
-                <div class="rating">
-                    <i class="material-icons">Caracteristicas de auris...</i>
-                </div>
+                <h4 class="card-title mb-0">
+                    <a href="student-take-course.html">
+                            {{productoItem.nombre}}
+                    </a>
+                </h4>
             </div>
-            <a href="student-take-course.html">
-                <img src="assets/images/products/1.jpg" alt="Card image cap" style="width:100%;">
+            <a [routerLink]="['/detalleProducto',productoItem.id]">
+                <img src="{{productoItem.imagen}}" alt="Card image cap" style="width:100%;">
             </a>
             <div class="card-body">
-                <small class="text-muted">AURICULARES</small><br> Let’s start with a quick tour of Vue’s data binding features. If you are more interested in ...<br>
-                <span class="badge badge-primary ">TECNOLOGIA</span>
-            </div>
-        </div>
-
-        <!--CARD 02-->
-        <div class="card">
-            <div class="card-header text-center">
-                <h4 class="card-title mb-0"><a href="student-take-course.html">Hogar</a></h4>
-                <div class="rating">
-                    <i class="material-icons">Caracteristicas de auris...</i>
-                </div>
-            </div>
-            <a href="student-take-course.html">
-                <img src="assets/images/products/2.jpg" alt="Card image cap" style="width:100%;">
-            </a>
-            <div class="card-body">
-                <small class="text-muted">AURICULARES</small><br> Developing static website with fast and advanced gulp setup by managing all parts...<br>
-                <small class="badge badge-primary ">TECNOLOGIA</small>
-            </div>
-        </div>
-
-        <!--CARD 03-->
-        <div class="card">
-            <div class="card-header text-center">
-                <h4 class="card-title mb-0"><a href="student-take-course.html">Campo</a></h4>
-                <div class="rating">
-                    <i class="material-icons">star</i>
-                    <i class="material-icons">star</i>
-                    <i class="material-icons">star_border</i>
-                    <i class="material-icons">star_border</i>
-                    <i class="material-icons">star_border</i>
-                </div>
-            </div>
-            <a href="student-take-course.html">
-                <img src="assets/images/products/3.jpg" alt="" style="width:100%;">
-            </a>
-            <div class="card-body">
-                <small class="text-muted">INTERMEDIATE</small><br> Learn the basics of Github and become a power Github developer.<br>
-                <small class="badge badge-primary ">GULP</small>
+                <small class="text-muted">{{productoItem.nombre}}</small><br> {{productoItem.descripcion}}<br>
+                <span class="badge badge-primary ">Suscripciones</span>
             </div>
         </div>
 

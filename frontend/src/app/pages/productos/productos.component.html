@@ -63,7 +63,7 @@
             </div>
             <a [routerLink]="['/detalleProducto',productoItem.id]">
                 <!-- <a [routerLink]="['/detalleProducto']"> -->
-                <img src="assets/images/products/{{productoItem.imagen}}.jpg " alt="Card image cap " style="width:100%; ">
+                <img src="{{productoItem.imagen}}" alt="Card image cap " style="width:100%; ">
             </a>
             <div class="card-body ">
                 <small class="text-muted ">AURICULARES</small><br> {{productoItem.descripcion}}<br>

@@ -51,7 +51,20 @@ export class ProductosComponent implements OnInit {
       .subscribe( (res: any) => {
         console.log('productos desde el componente: ',res);
         this.productos = res;
+        this.validarImagen();
       } );
+  }
+
+  validarImagen() {
+    if (this.productos) {
+      this.productos.forEach( productoActual => {
+          if (productoActual.imagen === '') {
+            productoActual.imagen = 'assets/images/not-image.png';
+          } else {
+            productoActual.imagen = `assets/images/products/${productoActual.imagen}.jpg`;
+          }
+      });
+    }
   }
 
   suscribir() {
