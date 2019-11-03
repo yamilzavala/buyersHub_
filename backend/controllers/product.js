@@ -148,6 +148,7 @@ function productMapper(product, params) {
     product.descripcion = params.descripcion ? params.descripcion : 'null';
     product.imagen = params.imagen ? params.imagen : 'null';
     product.estaSuscripto = params.estaSuscripto ? params.estaSuscripto : 'false';
+    product.cantidadSuscripciones = params.cantidadSuscripciones ? params.cantidadSuscripciones : 'null';
 }
 
 

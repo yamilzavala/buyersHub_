@@ -13,11 +13,11 @@
                     </h4>
                 </div>
 
-                <img src="{{imagen}}" style="width:100%; ">
+                <img src="{{imagen}}" class="img-size">
 
                 <div class="card-body ">
                     <small class="text-muted "> <br> {{producto.descripcion}}<br></small>
-                    <!-- <span class="badge badge-primary ">TECNOLOGIA</span> -->
+                    <hr> Suscripciones: <span class="badge badge-primary ">{{(producto.cantidadSuscripciones)/100 | percent}}</span>
                 </div>
                 <div>
                     <button type="button " class="btn btn-outline-primary m-1 ">Suscribirme</button>

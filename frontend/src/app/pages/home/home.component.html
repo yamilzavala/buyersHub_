@@ -46,8 +46,9 @@
                 <img src="{{productoItem.imagen}}" alt="Card image cap" style="width:100%;">
             </a>
             <div class="card-body">
-                <small class="text-muted">{{productoItem.nombre}}</small><br> {{productoItem.descripcion}}<br>
-                <span class="badge badge-primary ">Suscripciones</span>
+                <small class="text-muted">{{productoItem.nombre}}</small>
+                <br> {{productoItem.descripcion}}<br>
+                <hr> Suscripciones: <span class="badge badge-primary ">{{(productoItem.cantidadSuscripciones)/100 | percent}}</span>
             </div>
         </div>
 

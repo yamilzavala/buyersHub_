@@ -22,20 +22,21 @@ categoria: tecnologia
 descripcion: Descripcion producto
 imagen: 1
 estaSuscripto: false
+cantidadSuscripciones" : 75
 
 ========================
 
 GEY BY ID
 
 ##url:
-http://localhost:3000/api/products/getProductById/5dbe13afdae6131da0c6b258
+http://localhost:3000/api/products/getProductById/1
 
 ========================
 
 PUT
 
 ##url:
-http://localhost:3000/api/products/updateProduct/5dbe13afdae6131da0c6b258
+http://localhost:3000/api/products/updateProduct/1
 
 ##body
 id: 1
@@ -44,12 +45,13 @@ categoria: tecnologia
 descripcion: Descripcion producto
 imagen: 1
 estaSuscripto: false
+cantidadSuscripciones" : 95
 
 ========================
 DELETE
 
 ##url:
-http://localhost:3000/api/products/deleteProduct/5dbe13afdae6131da0c6b258
+http://localhost:3000/api/products/deleteProduct/1
 
 
 

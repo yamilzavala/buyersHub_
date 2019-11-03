@@ -5,6 +5,7 @@ export class ProductoModel {
     descripcion?: string;
     imagen: string;
     estaSuscripto: boolean;
+    cantidadSuscripciones: string;
 
     constructor(res : any){        
         this.id = res.id;
@@ -13,5 +14,6 @@ export class ProductoModel {
         this.descripcion = res.descripcion;
         this.imagen = res.imagen;
         this.estaSuscripto = res.estaSuscripto;
+        this.cantidadSuscripciones = res.cantidadSuscripciones;
     }
 }
