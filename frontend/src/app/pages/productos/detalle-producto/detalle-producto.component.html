@@ -13,15 +13,15 @@
                     </h4>
                 </div>
 
-                <img src="{{imagen}}" class="img-size">
+                <img src="assets/images/products/{{producto.imagen}}" class="img-size">
 
                 <div class="card-body ">
                     <small class="text-muted "> <br> {{producto.descripcion}}<br></small>
                     <hr> Suscripciones: <span class="badge badge-primary ">{{(producto.cantidadSuscripciones)/100 | percent}}</span>
                 </div>
                 <div>
-                    <button type="button " class="btn btn-outline-primary m-1 ">Suscribirme</button>
-                    <button type="button " class="btn btn-outline-primary ">Desuscribirme</button>
+                    <button type="button" class="btn btn-primary" (click)="suscribir(producto)" [hidden]="producto.estaSuscripto">Suscribirme</button>
+                    <button type="button" class="btn btn-secondary" (click)="desuscribir(producto)" [hidden]="!producto.estaSuscripto">Desuscribirme</button>
                 </div>
 
 
