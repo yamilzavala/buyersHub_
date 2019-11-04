@@ -12,29 +12,29 @@ function test(req, res) {
 
 
 function getProductos(req, res) {
-    var desde = req.query.desde || 1;
+    var desde = req.query.desde || 0;
     desde = Number(desde);
 
     Producto.find({}, (err, productos) => {
-            if (err) {
-                return res.status(500).send({
-                    ok: false,
-                    message: "Error cargando productos",
-                    errors: err
-                });
-            }
-
-            Producto.count({}, (err, conteo) => {
-                res.status(200).send({
-                    ok: true,
-                    productos,
-                    total: conteo
-                });
+        if (err) {
+            return res.status(500).send({
+                ok: false,
+                message: "Error cargando productos",
+                errors: err
             });
+        }
 
-        })
-        .skip(desde)
-        .limit(3);
+        Producto.count({}, (err, conteo) => {
+            res.status(200).send({
+                ok: true,
+                productos,
+                total: conteo
+            });
+        });
+
+    })
+        .skip(desde);
+    //.limit(3);
 }
 
 
@@ -67,7 +67,7 @@ function getProductoById(req, res) {
             res.status(500).send({ message: 'Error al buscar producto', err });
         } else {
             if (!product) {
-                res.status(404).send({ message: 'No se encontro el producto buscado' });
+                res.status(404).send({ message: 'No se encontró el producto buscado' });
             } else {
                 res.status(200).send(product);
             }
@@ -104,8 +104,7 @@ function saveProduct(req, res) {
 function updateProducto(req, res) {
     var productId = req.params.id;
     var update = req.body;
-
-    Producto.findByIdAndUpdate(productId, update, (err, productUpdated) => {
+    Producto.findOneAndUpdate({ id: productId }, update, (err, productUpdated) => {
         if (err) {
             res.status(500).send({ message: 'Error al actualizar producto', err });
         } else {
@@ -115,7 +114,6 @@ function updateProducto(req, res) {
                 res.status(200).send(productUpdated);
             }
         }
-
     });
 }
 
@@ -123,13 +121,12 @@ function updateProducto(req, res) {
 function eliminarProducto(req, res) {
     var productId = req.params.id;
 
-
     Producto.findByIdAndDelete(productId, (err, productDeleted) => {
         if (err) {
             res.status(500).send({ message: 'Error al eliminar producto', err });
         } else {
             if (!productDeleted) {
-                res.status(404).send({ message: 'No se encontro el producto a eliminar' });
+                res.status(404).send({ message: 'No se encontró el producto a eliminar' });
             } else {
                 res.status(200).send(productDeleted);
             }
@@ -147,6 +144,7 @@ function productMapper(product, params) {
     product.categoria = params.categoria ? params.categoria : 'null';
     product.descripcion = params.descripcion ? params.descripcion : 'null';
     product.imagen = params.imagen ? params.imagen : 'null';
+    product.imagenes = params.imagenes ? params.imagenes : 'null';
     product.estaSuscripto = params.estaSuscripto ? params.estaSuscripto : 'false';
     product.cantidadSuscripciones = params.cantidadSuscripciones ? params.cantidadSuscripciones : 'null';
 }

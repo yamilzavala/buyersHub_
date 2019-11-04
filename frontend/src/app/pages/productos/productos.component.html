@@ -52,27 +52,22 @@
         <div class="card" *ngFor="let productoItem of productos">
             <div class="card-header text-center">
                 <h4 class="card-title mb-0">
-                    <!--{{productos[0].nombre}}-->
                     {{productoItem.nombre}}
                 </h4>
-                <div class="rating">
-                    <i class="material-icons">Caracteristicas de {{productoItem.nombre}}...</i>
-                </div>
+                <!-- div class="rating">
+                    <i class="material-icons">Características de {{productoItem.nombre}}...</i>
+                </div -->
             </div>
             <a [routerLink]="['/detalleProducto',productoItem.id]">
-                <!-- <a [routerLink]="['/detalleProducto']"> -->
-                <img src="{{productoItem.imagen}}" alt="Card image cap " style="width:100%; ">
+                <img src="assets/images/products/{{productoItem.imagen}}" alt={{productoItem.nombre}} style="width:100%; ">
             </a>
             <div class="card-body ">
                 <small class="text-muted ">{{productoItem.nombre}}</small><br> {{productoItem.descripcion}}<br>
                 <hr> Suscripciones: <span class="badge badge-primary ">{{(productoItem.cantidadSuscripciones)/100 | percent}}</span>
 
             </div>
-            <button type="button " class="btn btn-outline-primary m-1 " (click)="suscribir() " routerLink="/suscripcion " [disabled]="productoItem.estaSuscripto ">Suscribirme</button>
-            <button type="button " class="btn btn-outline-primary " [disabled]="!productoItem.estaSuscripto ">Desuscribirme</button>
-            <!-- <button type="button " (click)="eliminarProductos(productoItem.id) " class="btn btn-outline-primary ">Eliminar</button> -->
-            <!-- <button type="button " (click)="agregarProducto_(productoItem) " class="btn btn-outline-primary ">Agregar</button> -->
-            <!-- <button type="button " (click)="modificarProductos(productoItem.id) " class="btn btn-outline-primary ">Modificar</button> -->
+            <button type="button" class="btn btn-primary" (click)="suscribir(productoItem)" [hidden]="productoItem.estaSuscripto">Suscribirme</button>
+            <button type="button" class="btn btn-secondary" (click)="desuscribir(productoItem)" [hidden]="!productoItem.estaSuscripto">Desuscribirme</button>
         </div>
 
     </div>

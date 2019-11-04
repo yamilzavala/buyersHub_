@@ -49,16 +49,8 @@ export class ProductosService {
         );
   }
 
-  editarProducto(id: string, body) {
-    return this._http.put( this.url + '/api/products/updateProduct/' + id, body )
-    .pipe(
-          map(res_productoModificado =>  {
-                console.log('Producto modificado: ', res_productoModificado);
-                if (res_productoModificado) {
-                  this.getProductos();
-                }
-          })
-        );
+  editarProducto(producto: ProductoModel): Observable<any> {    
+    return this._http.put( this.url + '/api/products/updateProduct/'+ producto.id, producto );
   }
 
 
